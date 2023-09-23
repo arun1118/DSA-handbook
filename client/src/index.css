@@ -1,0 +1,27 @@
+.problem-box{
+    border: 1px solid black;
+}
+
+.problem-box-single{
+    border: 3px solid red;
+}
+
+.form-container{
+    border: 2px solid gray;
+}
+
+.form-box{
+    position: relative;
+    width: fit-content;
+    left: 35%;
+}
+
+.navbar-top{
+    background-color: rgb(161, 161, 161);
+    width: 100%;
+    height: fit-content;
+}
+
+.navbar-top h1{
+    color: rgb(13, 20, 26);
+}

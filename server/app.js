@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import cookieParser from 'cookie-parser';
 import userRoutes from "./routes/userRoutes.js";
+import problemRoutes from "./routes/tasks.js";
 import {notFound,errorHandler} from "./middleware/errorMiddleware.js";
 import connectDB from './config/db.js';
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({extended: true})); // send data
 app.use(cookieParser());
 
 app.use('/user',userRoutes);
+app.use('/problems',problemRoutes);
 
 app.get('/',(req,res)=>{
     res.send("<h1>Backend running fine</h1>")

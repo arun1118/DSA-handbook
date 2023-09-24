@@ -105,6 +105,7 @@ const EditproblemPage = () => {
 
     return (
         <>
+        <h1>Edit problem</h1>
         <div className="form-container">
         <form className='form-box'>
             <label htmlFor="name">Enter the Problem Name</label>
@@ -114,11 +115,13 @@ const EditproblemPage = () => {
             <br />
             <label htmlFor="statement">Enter the Problem statement</label>
             <br />
-            <textarea id="statement" cols="50" rows="5" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
+            <textarea id="statement" cols="100" rows="10" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
             <br />
             <br />
-            <button type='button' onClick={handleSubmit}>Save</button>
-            <button type='button' onClick={handleDelete}>Delete</button>
+            <button type='button' onClick={handleSubmit} className='saveBtn saveEditBtn'>Save</button>
+            <button type='button' onClick={handleDelete} className='saveBtn deleteBtn'>Delete</button>
+            {/* <button type='button' onClick={handleSubmit}>Save</button> */}
+            {/* <button type='button' onClick={handleDelete}>Delete</button> */}
         </form>
         </div>
         </>

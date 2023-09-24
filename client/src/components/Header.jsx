@@ -1,10 +1,10 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
+import { FaSignInAlt, FaSignOutAlt,FaHome,FaPen,FaRegUserCircle } from 'react-icons/fa'; 
 import { useDispatch, useSelector } from 'react-redux';
 import {LinkContainer} from 'react-router-bootstrap';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -31,7 +31,7 @@ const Header = () => {
 
           {/* using this will not reload the page while directing to a new path */}
           <LinkContainer to='/'>
-            <Navbar.Brand href='/'>MERN Auth</Navbar.Brand>
+            <Navbar.Brand href='/'>DSA Handbook</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -41,20 +41,31 @@ const Header = () => {
               ? 
               (
                 <>
+                <LinkContainer to='/problems'>
+                  <Nav.Link>
+                    <FaHome /> Home
+                  </Nav.Link>
+                </LinkContainer>
+                <LinkContainer to='problems/addproblem'>
+                  <Nav.Link>
+                    <FaPen /> Create
+                  </Nav.Link>
+                </LinkContainer>
+                
                 <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>
-                      Profile
+                    <FaRegUserCircle style={{color: 'black'}}/> Profile
                     </NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
-                      Logout
+                      <FaSignOutAlt />Logout
                   </NavDropdown.Item>
                 </NavDropdown>
-                <ul>
+                {/* <ul>
                   <li><Link to="/problems">Home</Link></li>
                   <li><Link to='problems/addproblem'>Create</Link></li>
-                </ul>
+                </ul> */}
                 </>
               )
               : 
@@ -62,13 +73,13 @@ const Header = () => {
                 <>
                 <LinkContainer to='/login'>
                     <Nav.Link>
-                        <FaSignInAlt /> Sign In
+                        <FaSignInAlt /> Login
                     </Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to='/register'>
                     <Nav.Link>
-                        <FaSignOutAlt /> Sign Up
+                        <FaSignOutAlt /> Register
                     </Nav.Link>
                 </LinkContainer>
                 </>

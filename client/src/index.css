@@ -7,13 +7,13 @@
 }
 
 .form-container{
-    border: 2px solid gray;
+    /* border: 2px solid green; */
+    margin-top: 50px;
 }
 
 .form-box{
     position: relative;
     width: fit-content;
-    left: 35%;
 }
 
 .navbar-top{
@@ -25,3 +25,31 @@
 .navbar-top h1{
     color: rgb(13, 20, 26);
 }
+
+input[type=text], textarea{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .saveBtn{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .saveEditBtn{
+    background-color: #29bac2;
+  }
+
+  .deleteBtn{
+    background-color: #e62023;
+  }

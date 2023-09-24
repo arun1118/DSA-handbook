@@ -114,7 +114,7 @@ const RegisterScreen = () => {
 
                 <Form.Group className='my-2' controlId='confirmPassword'>
                     <Form.Label onClick={toggleConfirmPasswordVisibility} style={{cursor:'pointer'}}>Confirm Password 🙈</Form.Label>
-                    <span>{password===confirmPassword?'✔':'❌'}</span> 
+                    <span>{password===confirmPassword?'matched ✔':'not matched ❌'}</span> 
                     <Form.Control
                         type='password'
                         placeholder='Confirm Password'

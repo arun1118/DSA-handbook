@@ -69,6 +69,7 @@ const AddProblemForm = () => {
 
     return (
         <>
+        <h1>Add the Problem details</h1>
         <div className="form-container">
         <form className='form-box'>
             <label htmlFor="name">Enter the Problem Name</label>
@@ -78,10 +79,10 @@ const AddProblemForm = () => {
             <br />
             <label htmlFor="statement">Enter the Problem statement</label>
             <br />
-            <textarea id="statement" cols="50" rows="5" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
+            <textarea id="statement" cols="100" rows="10" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
             <br />
             <br />
-            <button type='button' onClick={handleSubmit}>Save</button>
+            <button type='button' onClick={handleSubmit} className='saveBtn'>Save</button>
         </form>
         </div>
         </>

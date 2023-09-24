@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProblems, getProblemsError, getProblemsStatus, selectAllProblems } from '../slices/problemSlice.js';
 import Problembox from './Problembox.jsx';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ProblemList = () => {
     const dispatch=useDispatch();
@@ -22,7 +25,7 @@ const ProblemList = () => {
     }
     else if(problemsStatus==='succeeded'){
         content=allProblems.map((prob,idx)=>{
-            return <Problembox key={idx} prob={prob}/>
+            return <Col><Problembox key={idx} prob={prob}/></Col>
         })
     }
     else if(problemsStatus==='failed'){
@@ -47,7 +50,11 @@ const ProblemList = () => {
         <h1>Sorry! No Question found. Try Adding on....</h1>
         </>
         } */}
-        {content}
+        <Container className='.mt-2'>
+            <Row>
+                {content}
+            </Row>
+            </Container>
         </>
     )
 }

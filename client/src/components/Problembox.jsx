@@ -10,11 +10,11 @@ const Problembox = ({prob}) => {
     problemName=problemName.replaceAll(' ','-');
     return (
         <>
-            <Card style={{ width: '18rem', border: '1px solid black',margin: '4px 2px' }}>
+            <Card style={{ border: '1px solid black',margin: '4px 2px' }}>
                 <Card.Body>
                     <Card.Title>{prob.name}</Card.Title>
                     <Card.Text>
-                    {prob.statement.substring(0,25)}...
+                    {prob.statement.substring(0,200)}...
                     </Card.Text>
                     <Button variant="dark"><Link to={`problem/${problemName}`} style={{textDecoration: 'none'}}>View problem..</Link></Button>
                     <Button variant="light"><Link to={`edit/${problemName}`} style={{textDecoration: 'none'}}>Edit</Link></Button>

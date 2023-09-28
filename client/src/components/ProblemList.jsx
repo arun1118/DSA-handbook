@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProblems, getProblemsError, getProblemsStatus, selectAllProblems } from '../slices/problemSlice.js';
 import Problembox from './Problembox.jsx';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+// import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const ProblemList = () => {
@@ -50,10 +50,10 @@ const ProblemList = () => {
         <h1>Sorry! No Question found. Try Adding on....</h1>
         </>
         } */}
-        <Container className='.mt-2'>
-            <Row>
+        <Container className='.mt-2' fluid>
+            {/* <Row> */}
                 {content}
-            </Row>
+            {/* </Row> */}
             </Container>
         </>
     )

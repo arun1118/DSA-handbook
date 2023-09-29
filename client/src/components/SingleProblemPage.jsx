@@ -30,6 +30,11 @@ const SingleProblemPage = () => {
                 <Card.Text>
                 {singleProblemFound.statement}
                 </Card.Text>
+                <br />
+                <h4 style={{ color: '#04bcc7' }}>Approach</h4>
+                <Card.Text>
+                {singleProblemFound.approach?singleProblemFound.approach:<p>No Approach saved!!</p>}
+                </Card.Text>
                 <Button variant="dark"><Link to={`/problems`} style={{textDecoration: 'none'}}>Home</Link></Button>
             </Card.Body>
         </Card>

@@ -16,6 +16,7 @@ const EditproblemPage = () => {
 
     const [name,setName]=useState(singleProblemFound?.name);
     const [statement,setStatement]=useState(singleProblemFound?.statement);
+    const [approach,setAppraoch]=useState(singleProblemFound?.approach);
     const [addProblemRequestStatus,setAddProblemRequestStatus]=useState('idle');
 
     useEffect(() => {
@@ -43,6 +44,10 @@ const EditproblemPage = () => {
         let rcvdValue=e.target.value;
         setStatement(rcvdValue);
     }
+    function handleApproachChange(e){
+        let rcvdValue=e.target.value;
+        setAppraoch(rcvdValue);
+    }
 
     let canSave=[name,statement].every(Boolean) && addProblemRequestStatus==='idle';
 
@@ -61,7 +66,8 @@ const EditproblemPage = () => {
                 let problemData={
                     _id:singleProblemFound._id,
                     name: nameval,
-                    statement: statementval
+                    statement: statementval,
+                    approach: approach
                 }
                 dispatch(updateProblem(problemData)).unwrap();
                 setName('');
@@ -116,6 +122,11 @@ const EditproblemPage = () => {
             <label htmlFor="statement">Enter the Problem statement</label>
             <br />
             <textarea id="statement" cols="100" rows="10" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
+            <br />
+            <br />
+            <label htmlFor="statement">Enter your approach</label>
+            <br />
+            <textarea id="approach" cols="100" rows="5" value={approach} onChange={handleApproachChange} placeholder='Describe the approach to solve the problem'></textarea>
             <br />
             <br />
             <button type='button' onClick={handleSubmit} className='saveBtn saveEditBtn'>Save</button>

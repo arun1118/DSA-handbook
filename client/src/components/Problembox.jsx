@@ -16,6 +16,9 @@ const Problembox = ({prob}) => {
                     <Card.Text>
                     {prob.statement.substring(0,200)}...
                     </Card.Text>
+                    {/* <Card.Text>
+                    {prob.approach?prob.approach.substring(0,100):<>No Approach!!</>}...
+                    </Card.Text> */}
                     <Button variant="dark"><Link to={`problem/${problemName}`} style={{textDecoration: 'none'}}>View problem..</Link></Button>
                     <Button variant="light"><Link to={`edit/${problemName}`} style={{textDecoration: 'none'}}>Edit</Link></Button>
                 </Card.Body>

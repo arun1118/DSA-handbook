@@ -10,6 +10,7 @@ const AddProblemForm = () => {
 
     const [name,setName]=useState('');
     const [statement,setStatement]=useState('');
+    const [approach,setAppraoch]=useState('');
     const [addProblemRequestStatus,setAddProblemRequestStatus]=useState('idle');
 
     useEffect(() => {
@@ -31,6 +32,10 @@ const AddProblemForm = () => {
         let rcvdValue=e.target.value;
         setStatement(rcvdValue);
     }
+    function handleApproachChange(e){
+        let rcvdValue=e.target.value;
+        setAppraoch(rcvdValue);
+    }
 
     let canSave=[name,statement].every(Boolean) && addProblemRequestStatus==='idle';
 
@@ -51,7 +56,8 @@ const AddProblemForm = () => {
                 let statementval=statement[0].toUpperCase()+statement.slice(1);
                 let problemData={
                     name: nameval,
-                    statement: statementval
+                    statement: statementval,
+                    approach: approach
                 }
                 dispatch(addNewProblem(problemData)).unwrap();
                 setName('');
@@ -80,6 +86,11 @@ const AddProblemForm = () => {
             <label htmlFor="statement">Enter the Problem statement</label>
             <br />
             <textarea id="statement" cols="100" rows="10" value={statement} onChange={handleStatementChange} placeholder='Describe the problem'></textarea>
+            <br />
+            <br />
+            <label htmlFor="statement">Enter your approach</label>
+            <br />
+            <textarea id="approach" cols="100" rows="5" value={approach} onChange={handleApproachChange} placeholder='Describe the approach to solve the problem'></textarea>
             <br />
             <br />
             <button type='button' onClick={handleSubmit} className='saveBtn'>Save</button>

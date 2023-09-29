@@ -6,6 +6,9 @@ const ProblemSchema=new mongoose.Schema({
     },
     statement:{
         type: String
+    },
+    approach:{
+        type: String
     }
 })
 
